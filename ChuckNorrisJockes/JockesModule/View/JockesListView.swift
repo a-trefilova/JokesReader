@@ -18,24 +18,30 @@ class JockesListView: UIView {
         return tableView
     }()
     
-    private var jokesCountTextField: UITextField = {
+    var jokesCountTextField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .numberPad
         textField.placeholder = "Input count ..."
+        textField.textAlignment = .center
+        textField.font = UIFont.systemFont(ofSize: 20)
+        textField.adjustsFontSizeToFitWidth = true
         return textField
     }()
     
     var loadJokesButton: UIButton = {
         let button = UIButton()
-        button.setTitle("LOAD", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        //button.setTitle("LOAD", for: .normal)
+        button.setAttributedTitle(NSAttributedString(string: "LOAD", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.kern: -0.41]), for: .normal)
+        //button.setTitleColor(.white, for: .normal)
+        
         button.tintColor = .blue
         button.backgroundColor = .blue
         return button
     }()
     
     var buttonBottomConstraintValue: CGFloat = -80
-    var topTFConstraintValue: CGFloat = 350
+   // var topTFConstraintValue: CGFloat = 350
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,6 +49,7 @@ class JockesListView: UIView {
         addSubviews()
         makeConstraints()
         subscribeToShowKeyboardNotifications()
+    
     }
     
     required init?(coder: NSCoder) {
@@ -57,19 +64,34 @@ class JockesListView: UIView {
     
     @objc func keyboardWillShow(_ notification: Notification) {
        
-            let userInfo = notification.userInfo
-            let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
-            let keyboardHeight = keyboardSize.cgRectValue.height
-            buttonBottomConstraintValue = -80 - keyboardHeight
-            topTFConstraintValue = 350 - keyboardHeight
-            setNeedsLayout()
-            setNeedsUpdateConstraints()
-            layoutIfNeeded()
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardHeight = keyboardSize.cgRectValue.height
+        buttonBottomConstraintValue = -80 - keyboardHeight
+        //    topTFConstraintValue = 350 - keyboardHeight
+        
+//        jokesCountTextField.snp.updateConstraints { (make) in
+//            make.top.equalTo(customView.snp.top).offset(topTFConstraintValue)
+//        }
+        
+        loadJokesButton.snp.updateConstraints { (make) in
+            make.bottom.equalTo(customView.snp.bottom).offset(buttonBottomConstraintValue)
+        }
+        
+        layoutIfNeeded()
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-            buttonBottomConstraintValue = -80
-            topTFConstraintValue = 350
+        buttonBottomConstraintValue = -80
+//            topTFConstraintValue = 350
+//        jokesCountTextField.snp.updateConstraints { (make) in
+//            make.top.equalTo(customView.snp.top).offset(topTFConstraintValue)
+//        }
+        
+        loadJokesButton.snp.updateConstraints { (make) in
+            make.bottom.equalTo(customView.snp.bottom).offset(buttonBottomConstraintValue)
+        }
+        layoutIfNeeded()
     }
     
     
@@ -98,18 +120,24 @@ class JockesListView: UIView {
         }
         
         jokesCountTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(jokesListTableView.snp.top).offset(320)
+           // make.top.equalTo(customView.snp.top).offset(topTFConstraintValue)
             make.centerX.equalTo(jokesListTableView.snp.centerX)
-            make.height.equalTo(30)
-            make.bottom.equalTo(loadJokesButton.snp.top).offset(10)
+            make.height.equalTo(40)
+            make.width.equalTo(UIScreen.main.bounds.width / 4)
+           // make.bottom.greaterThanOrEqualTo(loadJokesButton.snp.top).offset(-20)
         }
         
         loadJokesButton.snp.makeConstraints { (make) in
-            //make.top.equalTo(jokesCountTextField.snp.bottom).offset(10)
+            make.top.equalTo(jokesCountTextField.snp.bottom).offset(10)
+            make.width.equalTo(UIScreen.main.bounds.width / 5)
             make.centerX.equalTo(jokesListTableView.snp.centerX)
-            make.height.equalTo(30)
-            make.bottom.equalTo(jokesListTableView.snp.bottom).offset(buttonBottomConstraintValue)
+            make.height.equalTo(40)
+            make.bottom.equalTo(customView.snp.bottom).offset(buttonBottomConstraintValue)
         }
+        
+        
     }
     
 }
+
+

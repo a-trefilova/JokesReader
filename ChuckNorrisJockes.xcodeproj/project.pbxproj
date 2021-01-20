@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C0A0775A13FCE69742CF333E /* Pods_ChuckNorrisJockes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; };
 		D631444525B87C150081AA28 /* JokesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D631444425B87C150081AA28 /* JokesListDataSource.swift */; };
+		D631444F25B8C49B0081AA28 /* JokesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D631444E25B8C49B0081AA28 /* JokesListCell.swift */; };
 		D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404425B8277D00EDFAE2 /* AppDelegate.swift */; };
 		D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */; };
 		D69D404925B8277D00EDFAE2 /* JockesListViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */; };
@@ -27,6 +28,7 @@
 		34F2F6D72C4A4B7B82B22B61 /* Pods-ChuckNorrisJockes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisJockes.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes.debug.xcconfig"; sourceTree = "<group>"; };
 		49FC150A36D9448E79B39A2E /* Pods-ChuckNorrisJockes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisJockes.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes.release.xcconfig"; sourceTree = "<group>"; };
 		D631444425B87C150081AA28 /* JokesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListDataSource.swift; sourceTree = "<group>"; };
+		D631444E25B8C49B0081AA28 /* JokesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListCell.swift; sourceTree = "<group>"; };
 		D69D404125B8277D00EDFAE2 /* ChuckNorrisJockes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorrisJockes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69D404425B8277D00EDFAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D631444925B8C4040081AA28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D631444A25B8C40D0081AA28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D631444425B87C150081AA28 /* JokesListDataSource.swift */,
+				D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */,
+				D69D406725B82D4900EDFAE2 /* JockesListView.swift */,
+				D631444E25B8C49B0081AA28 /* JokesListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D631444B25B8C4120081AA28 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D631444C25B8C42A0081AA28 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
 		D69D403825B8277D00EDFAE2 = {
 			isa = PBXGroup;
 			children = (
@@ -106,13 +143,11 @@
 		D69D406125B82CCB00EDFAE2 /* JockesModule */ = {
 			isa = PBXGroup;
 			children = (
-				D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */,
-				D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */,
-				D69D406725B82D4900EDFAE2 /* JockesListView.swift */,
-				D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */,
-				D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */,
 				D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */,
-				D631444425B87C150081AA28 /* JokesListDataSource.swift */,
+				D631444C25B8C42A0081AA28 /* ServiceLayer */,
+				D631444B25B8C4120081AA28 /* Presenter */,
+				D631444A25B8C40D0081AA28 /* View */,
+				D631444925B8C4040081AA28 /* Model */,
 			);
 			path = JockesModule;
 			sourceTree = "<group>";
@@ -248,6 +283,7 @@
 				D69D407225B831D700EDFAE2 /* JockesListBuilder.swift in Sources */,
 				D69D406825B82D4900EDFAE2 /* JockesListView.swift in Sources */,
 				D631444525B87C150081AA28 /* JokesListDataSource.swift in Sources */,
+				D631444F25B8C49B0081AA28 /* JokesListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
