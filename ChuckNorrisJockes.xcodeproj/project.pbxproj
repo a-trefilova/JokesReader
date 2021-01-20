@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0A0775A13FCE69742CF333E /* Pods_ChuckNorrisJockes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; };
+		D631444525B87C150081AA28 /* JokesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D631444425B87C150081AA28 /* JokesListDataSource.swift */; };
 		D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404425B8277D00EDFAE2 /* AppDelegate.swift */; };
 		D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */; };
-		D69D404925B8277D00EDFAE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* ViewController.swift */; };
-		D69D404C25B8277E00EDFAE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69D404A25B8277E00EDFAE2 /* Main.storyboard */; };
+		D69D404925B8277D00EDFAE2 /* JockesListViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */; };
 		D69D404E25B8278200EDFAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D69D404D25B8278200EDFAE2 /* Assets.xcassets */; };
 		D69D405125B8278200EDFAE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */; };
+		D69D405F25B8296C00EDFAE2 /* DocWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D405E25B8296C00EDFAE2 /* DocWebViewController.swift */; };
+		D69D406425B82D2700EDFAE2 /* JockesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */; };
+		D69D406825B82D4900EDFAE2 /* JockesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406725B82D4900EDFAE2 /* JockesListView.swift */; };
+		D69D406B25B82D5F00EDFAE2 /* JockesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */; };
+		D69D406F25B82F1C00EDFAE2 /* JockesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */; };
+		D69D407225B831D700EDFAE2 /* JockesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorrisJockes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F2F6D72C4A4B7B82B22B61 /* Pods-ChuckNorrisJockes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisJockes.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes.debug.xcconfig"; sourceTree = "<group>"; };
+		49FC150A36D9448E79B39A2E /* Pods-ChuckNorrisJockes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisJockes.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes.release.xcconfig"; sourceTree = "<group>"; };
+		D631444425B87C150081AA28 /* JokesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListDataSource.swift; sourceTree = "<group>"; };
 		D69D404125B8277D00EDFAE2 /* ChuckNorrisJockes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorrisJockes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69D404425B8277D00EDFAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D69D404825B8277D00EDFAE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D69D404B25B8277E00EDFAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListViewControllerViewController.swift; sourceTree = "<group>"; };
 		D69D404D25B8278200EDFAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D69D405025B8278200EDFAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D69D405225B8278200EDFAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D69D405E25B8296C00EDFAE2 /* DocWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocWebViewController.swift; sourceTree = "<group>"; };
+		D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListPresenter.swift; sourceTree = "<group>"; };
+		D69D406725B82D4900EDFAE2 /* JockesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListView.swift; sourceTree = "<group>"; };
+		D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListModel.swift; sourceTree = "<group>"; };
+		D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListService.swift; sourceTree = "<group>"; };
+		D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A0775A13FCE69742CF333E /* Pods_ChuckNorrisJockes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0031A37FA5279D9B1241A64E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34F2F6D72C4A4B7B82B22B61 /* Pods-ChuckNorrisJockes.debug.xcconfig */,
+				49FC150A36D9448E79B39A2E /* Pods-ChuckNorrisJockes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		44DAD823E4BA05B493BC3F31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D69D403825B8277D00EDFAE2 = {
 			isa = PBXGroup;
 			children = (
 				D69D404325B8277D00EDFAE2 /* ChuckNorrisJockes */,
 				D69D404225B8277D00EDFAE2 /* Products */,
+				0031A37FA5279D9B1241A64E /* Pods */,
+				44DAD823E4BA05B493BC3F31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,37 @@
 		D69D404325B8277D00EDFAE2 /* ChuckNorrisJockes */ = {
 			isa = PBXGroup;
 			children = (
+				D69D406225B82CDC00EDFAE2 /* APIWebViewModule */,
+				D69D406125B82CCB00EDFAE2 /* JockesModule */,
 				D69D404425B8277D00EDFAE2 /* AppDelegate.swift */,
 				D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */,
-				D69D404825B8277D00EDFAE2 /* ViewController.swift */,
-				D69D404A25B8277E00EDFAE2 /* Main.storyboard */,
 				D69D404D25B8278200EDFAE2 /* Assets.xcassets */,
 				D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */,
 				D69D405225B8278200EDFAE2 /* Info.plist */,
 			);
 			path = ChuckNorrisJockes;
+			sourceTree = "<group>";
+		};
+		D69D406125B82CCB00EDFAE2 /* JockesModule */ = {
+			isa = PBXGroup;
+			children = (
+				D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */,
+				D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */,
+				D69D406725B82D4900EDFAE2 /* JockesListView.swift */,
+				D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */,
+				D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */,
+				D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */,
+				D631444425B87C150081AA28 /* JokesListDataSource.swift */,
+			);
+			path = JockesModule;
+			sourceTree = "<group>";
+		};
+		D69D406225B82CDC00EDFAE2 /* APIWebViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				D69D405E25B8296C00EDFAE2 /* DocWebViewController.swift */,
+			);
+			path = APIWebViewModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D69D405525B8278200EDFAE2 /* Build configuration list for PBXNativeTarget "ChuckNorrisJockes" */;
 			buildPhases = (
+				83E6F6F71DDEFFB9B53F4384 /* [CP] Check Pods Manifest.lock */,
 				D69D403D25B8277D00EDFAE2 /* Sources */,
 				D69D403E25B8277D00EDFAE2 /* Frameworks */,
 				D69D403F25B8277D00EDFAE2 /* Resources */,
+				D1BC5CC6AF267AEF5C4D045C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,34 +186,74 @@
 			files = (
 				D69D405125B8278200EDFAE2 /* LaunchScreen.storyboard in Resources */,
 				D69D404E25B8278200EDFAE2 /* Assets.xcassets in Resources */,
-				D69D404C25B8277E00EDFAE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83E6F6F71DDEFFB9B53F4384 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChuckNorrisJockes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1BC5CC6AF267AEF5C4D045C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChuckNorrisJockes/Pods-ChuckNorrisJockes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D69D403D25B8277D00EDFAE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69D404925B8277D00EDFAE2 /* ViewController.swift in Sources */,
+				D69D405F25B8296C00EDFAE2 /* DocWebViewController.swift in Sources */,
+				D69D404925B8277D00EDFAE2 /* JockesListViewControllerViewController.swift in Sources */,
+				D69D406425B82D2700EDFAE2 /* JockesListPresenter.swift in Sources */,
 				D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */,
+				D69D406B25B82D5F00EDFAE2 /* JockesListModel.swift in Sources */,
 				D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */,
+				D69D406F25B82F1C00EDFAE2 /* JockesListService.swift in Sources */,
+				D69D407225B831D700EDFAE2 /* JockesListBuilder.swift in Sources */,
+				D69D406825B82D4900EDFAE2 /* JockesListView.swift in Sources */,
+				D631444525B87C150081AA28 /* JokesListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D69D404A25B8277E00EDFAE2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D69D404B25B8277E00EDFAE2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +383,7 @@
 		};
 		D69D405625B8278200EDFAE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34F2F6D72C4A4B7B82B22B61 /* Pods-ChuckNorrisJockes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +403,7 @@
 		};
 		D69D405725B8278200EDFAE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49FC150A36D9448E79B39A2E /* Pods-ChuckNorrisJockes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

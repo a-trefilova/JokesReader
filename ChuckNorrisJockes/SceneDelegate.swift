@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  ChuckNorrisJockes
-//
-//  Created by Alyona Sabitskaya  on 20.01.2021.
-//
 
 import UIKit
 
@@ -13,10 +7,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        let firstVc = JockesListBuilder().build()
+        let secondVc = DocWebViewController()
+        
+        let firstNavController = UINavigationController(rootViewController:firstVc)
+        let firstTabBarItem = UITabBarItem(title: "Jockes", image: UIImage(systemName: ""), tag: 0)
+        firstNavController.tabBarItem = firstTabBarItem
+        
+        let secondNavControler = UINavigationController(rootViewController: secondVc)
+        let secondTabBarItem = UITabBarItem(title: "API", image: UIImage(systemName: ""), tag: 1)
+        secondNavControler.tabBarItem = secondTabBarItem
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [firstNavController, secondNavControler]
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
