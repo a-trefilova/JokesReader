@@ -1,8 +1,13 @@
 
 import UIKit
 
-class JockesListViewController: UIViewController {
-    
+protocol ViewControllerDelegate: class {
+    func selectedCell(row: Int)
+}
+
+
+class JockesListViewController: UIViewController, ViewControllerDelegate {
+   
     var presenter: JockesListPresenterProtocol!
     
     var rootView: JockesListView? {
@@ -10,6 +15,7 @@ class JockesListViewController: UIViewController {
     }
 
     private var rootViewDatasource: JokesListDatasource?
+    private var rootViewDelegate: JokesListDelegate?
     private var textFieldValue: Int? {
         didSet {
             print("Textfield value changed")
@@ -43,6 +49,12 @@ class JockesListViewController: UIViewController {
         presenter.getJockes(jokesCount: value)
     }
 
+    //MARK: View Controller Delegate
+    func selectedCell(row: Int) {
+        
+    }
+    
+    
 }
 
 extension JockesListViewController: JockesListViewProtocol {
@@ -71,7 +83,9 @@ extension JockesListViewController: JockesListViewProtocol {
     
     func setListOfJockes(listOfJockes: [Joke]) {
         rootViewDatasource = JokesListDatasource(jokes: listOfJockes)
+        rootViewDelegate = JokesListDelegate(jokes: listOfJockes)
         rootView?.jokesListTableView.dataSource = rootViewDatasource
+        rootView?.jokesListTableView.delegate = rootViewDelegate
         rootView?.jokesListTableView.register(JokesListCell.self, forCellReuseIdentifier: JokesListCell.reuseId)
         rootView?.jokesListTableView.reloadData()
     }
@@ -102,4 +116,5 @@ extension JockesListViewController: UITextFieldDelegate {
         
     }
 }
+
 

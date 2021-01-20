@@ -10,6 +10,11 @@ class JockesListService {
             complition([], ErrorType.zeroResults)
             return
         }
+//        let jokesNumber = getCountOfAllJockes()
+//        
+//        if jokesCount > jokesNumber {
+//            complition([], ErrorType.requestLimit)
+//        }
         
 //        getCountOfAllJockes() { number in
 //            if number == 0 {
@@ -48,11 +53,16 @@ class JockesListService {
         var value = 0
         AF.request("https://api.icndb.com/jokes/count").responseDecodable(of: CountResponse.self) { response in
             guard let response = response.value else { return }
-            value = response.value
-            completion(0)
-            return
+            guard response.value > 0 else { return }
+            DispatchQueue.main.async {
+                value = response.value
+            }
         }
-        completion(value)
+        if value > 0 {
+            return value
+        } else {
+            return nil
+        }
     }
 }
 
