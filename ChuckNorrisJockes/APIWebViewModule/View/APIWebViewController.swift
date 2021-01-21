@@ -5,8 +5,8 @@ import WebKit
 class APIWebViewController: UIViewController {
     
     var presenter: APIWebViewPresenter!
-    var webView: WKWebView!
-    var webViewDelegate: WkNavDelegate?
+    private var webView: WKWebView!
+    private var webViewDelegate: WkNavDelegate?
     
     override func loadView() {
         webView = WKWebView()

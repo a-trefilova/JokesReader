@@ -47,7 +47,6 @@ class JockesListView: UIView {
         addSubviews()
         makeConstraints()
         subscribeToShowKeyboardNotifications()
-        //designTextFieldAndButton ()
     }
     
     required init?(coder: NSCoder) {
@@ -58,7 +57,7 @@ class JockesListView: UIView {
         designTextFieldAndButton()
     }
     
-    func subscribeToShowKeyboardNotifications() {
+    private func subscribeToShowKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }

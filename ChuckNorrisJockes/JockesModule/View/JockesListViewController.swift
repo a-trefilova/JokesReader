@@ -1,28 +1,17 @@
 
 import UIKit
 
-protocol ViewControllerDelegate: class {
-    func selectedCell(row: Int)
-}
-
-
-class JockesListViewController: UIViewController, ViewControllerDelegate {
+class JockesListViewController: UIViewController {
    
     var presenter: JockesListPresenterProtocol!
     
-    var rootView: JockesListView? {
+    private var rootView: JockesListView? {
         return view as? JockesListView
     }
 
     private var rootViewDatasource: JokesListDatasource?
     private var rootViewDelegate: JokesListDelegate?
-    private var textFieldValue: Int? {
-        didSet {
-            print("Textfield value changed")
-        }
-    }
-    
-    
+    private var textFieldValue: Int?
     
     override func loadView() {
         view = JockesListView(frame: .zero)
@@ -30,32 +19,30 @@ class JockesListViewController: UIViewController, ViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-        //presenter.getJockes(jokesCount: 3)
-        rootView?.loadJokesButton.addTarget(self, action: #selector(loadJokesButtonTapped), for: .touchUpInside)
+        hideKeyboardByTap()
         rootView?.jokesCountTextField.delegate = self
+        rootView?.loadJokesButton.addTarget(self,
+                                            action: #selector(loadJokesButtonTapped),
+                                            for: .touchUpInside)
+        
         navigationController?.navigationBar.topItem?.title = "Jokes"
     }
 
+    private func hideKeyboardByTap() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
     @objc func loadJokesButtonTapped() {
-        //presenter.getJockes(jokesCount: 0)
         rootView?.jokesCountTextField.endEditing(true)
         guard let value = textFieldValue else {
-           // UIAlertController
             return
         }
-        if 574 >= value {
+        if 574 >= value && value > 0 {
             presenter.getJockes(jokesCount: value)
         }
     }
 
-    //MARK: View Controller Delegate
-    func selectedCell(row: Int) {
-        
-    }
-    
-    
 }
 
 extension JockesListViewController: JockesListViewProtocol {
@@ -67,20 +54,8 @@ extension JockesListViewController: JockesListViewProtocol {
             let alertAction = UIAlertAction(title: "Ok, I'll wait", style: .destructive, handler: nil)
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
-        case .requestLimit:
-            alertController = UIAlertController(title: "Request Limit", message: "You've exceeded number of available jockes. Please, enter lower number of jokes", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Understood", style: .destructive, handler: nil)
-            alertController.addAction(alertAction)
-            present(alertController, animated: true, completion: nil)
-        case .zeroResults:
-            alertController = UIAlertController(title: "Zero resuts", message: "We found nothing. Please, enter the number greater than zero", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
-            alertController.addAction(alertAction)
-            present(alertController, animated: true, completion: nil)
         }
     }
-    
-   
     
     func setListOfJockes(listOfJockes: [Joke]) {
         rootViewDatasource = JokesListDatasource(jokes: listOfJockes)
@@ -98,11 +73,8 @@ extension JockesListViewController: JockesListViewProtocol {
 
 extension JockesListViewController: UITextFieldDelegate {
     
-    
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         guard let text = textField.text else {
-            
             let alertController = UIAlertController(title: "Oops!", message: "Something went wrong...", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok, I'll try again", style: .destructive, handler: nil)
             alertController.addAction(alertAction)
@@ -111,19 +83,30 @@ extension JockesListViewController: UITextFieldDelegate {
         }
         textFieldValue = Int(text)
         
-        guard let textFieldValue = textFieldValue else { return false}
-        if textFieldValue > 574 {
-            let alertController = UIAlertController(title: "Request Limit", message: "You've exceeded number of available jockes. Please, enter lower number of jokes", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Understood", style: .destructive, handler: nil)
+        guard let textFieldValue = textFieldValue else {
+            return false}
+        
+        switch textFieldValue {
+        
+        case 0:
+            let alertController = UIAlertController(title: "Zero results", message: "We found nothing. Insert the number greater than zero.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok, I'll try again", style: .destructive, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+        case 1...574:
+            return true
+            
+        default:
+            let alertController = UIAlertController(title: "Request Limit", message: "Please, enter number of jokes from 0 to 574.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok, I'll try again", style: .destructive, handler: nil)
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
         }
-        return true 
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
+
+        return false
         
     }
+    
 }
 
 

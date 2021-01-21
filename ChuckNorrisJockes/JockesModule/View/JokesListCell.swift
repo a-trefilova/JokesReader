@@ -11,7 +11,6 @@ class JokesListCell: UITableViewCell {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         
-        
         let myContentView = UIView()
         myContentView.backgroundColor = .white
         myContentView.layer.cornerRadius = 8
@@ -45,7 +44,6 @@ class JokesListCell: UITableViewCell {
         contentView.snp.makeConstraints { (make) in
             make.height.equalTo(myContentView.snp.height)
         }
-       // contentView.contentHuggingPriority(for: NSLayoutConstraint.Axis.vertical)
         
     }
 }

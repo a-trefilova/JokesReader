@@ -10,8 +10,6 @@ protocol JockesListViewProtocol {
 protocol JockesListPresenterProtocol {
     
     init(service: JockesListService, view: JockesListViewProtocol)
-    func presentJockes()
-    func removeJockes()
     func getJockes(jokesCount count: Int)
     
 }
@@ -26,25 +24,7 @@ class JockesListPresenter: JockesListPresenterProtocol {
         self.jockesView = view
         
     }
-    
-    
-    func presentJockes() {
-//        jockesListService.getJockes(jokesCount: 3) { jokes, error in
-//            guard let jokes = jokes else { return}
-//            print(jokes)
-//            DispatchQueue.main.async {
-//                self.jockesView.setListOfJockes(listOfJockes: jokes)
-//            }
-//        }
-    }
-    
-    func removeJockes() {
-        DispatchQueue.main.async {
-            self.jockesView.setListOfJockes(listOfJockes: [])
-            self.jockesView.reloadView()
-        }
-    }
-    
+
     func getJockes(jokesCount count: Int)  {
         jockesListService.getJockes(jokesCount: count) { jokes, error in
             if let error = error {

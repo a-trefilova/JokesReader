@@ -15,9 +15,10 @@
 		D67A953B25B9947F00DECB55 /* APIWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A953A25B9947F00DECB55 /* APIWebViewPresenter.swift */; };
 		D67A953E25B9949800DECB55 /* APIWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A953D25B9949800DECB55 /* APIWebViewModel.swift */; };
 		D67A954325B9A55E00DECB55 /* APIWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A954225B9A55E00DECB55 /* APIWebViewDelegate.swift */; };
+		D67A954A25B9B6B200DECB55 /* JokesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */; };
 		D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404425B8277D00EDFAE2 /* AppDelegate.swift */; };
 		D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */; };
-		D69D404925B8277D00EDFAE2 /* JockesListViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */; };
+		D69D404925B8277D00EDFAE2 /* JockesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */; };
 		D69D404E25B8278200EDFAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D69D404D25B8278200EDFAE2 /* Assets.xcassets */; };
 		D69D405125B8278200EDFAE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */; };
 		D69D405F25B8296C00EDFAE2 /* APIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D405E25B8296C00EDFAE2 /* APIWebViewController.swift */; };
@@ -39,10 +40,11 @@
 		D67A953A25B9947F00DECB55 /* APIWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWebViewPresenter.swift; sourceTree = "<group>"; };
 		D67A953D25B9949800DECB55 /* APIWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWebViewModel.swift; sourceTree = "<group>"; };
 		D67A954225B9A55E00DECB55 /* APIWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWebViewDelegate.swift; sourceTree = "<group>"; };
+		D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListDelegate.swift; sourceTree = "<group>"; };
 		D69D404125B8277D00EDFAE2 /* ChuckNorrisJockes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorrisJockes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69D404425B8277D00EDFAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListViewControllerViewController.swift; sourceTree = "<group>"; };
+		D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListViewController.swift; sourceTree = "<group>"; };
 		D69D404D25B8278200EDFAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D69D405025B8278200EDFAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D69D405225B8278200EDFAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				D631444425B87C150081AA28 /* JokesListDataSource.swift */,
-				D69D404825B8277D00EDFAE2 /* JockesListViewControllerViewController.swift */,
+				D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */,
+				D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */,
 				D69D406725B82D4900EDFAE2 /* JockesListView.swift */,
 				D631444E25B8C49B0081AA28 /* JokesListCell.swift */,
 			);
@@ -314,8 +317,9 @@
 			files = (
 				D67A953E25B9949800DECB55 /* APIWebViewModel.swift in Sources */,
 				D67A954325B9A55E00DECB55 /* APIWebViewDelegate.swift in Sources */,
+				D67A954A25B9B6B200DECB55 /* JokesListDelegate.swift in Sources */,
 				D69D405F25B8296C00EDFAE2 /* APIWebViewController.swift in Sources */,
-				D69D404925B8277D00EDFAE2 /* JockesListViewControllerViewController.swift in Sources */,
+				D69D404925B8277D00EDFAE2 /* JockesListViewController.swift in Sources */,
 				D69D406425B82D2700EDFAE2 /* JockesListPresenter.swift in Sources */,
 				D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */,
 				D69D406B25B82D5F00EDFAE2 /* JockesListModel.swift in Sources */,

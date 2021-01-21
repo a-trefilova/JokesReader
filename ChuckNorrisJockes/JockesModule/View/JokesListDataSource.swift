@@ -17,23 +17,10 @@ class JokesListDatasource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: JokesListCell.reuseId, for: indexPath) as! JokesListCell
         let joke = listOfJokes[indexPath.row]
         cell.fillCellWithData(data: joke.joke)
-        //cell.textLabel?.text = joke.joke
         return cell
     }
     
-    
-    
 }
 
 
-class JokesListDelegate: NSObject, UITableViewDelegate {
-    
-    var listOfJokes: [Joke]
-    init(jokes: [Joke]) {
-        self.listOfJokes = jokes
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
-    }
-}
+

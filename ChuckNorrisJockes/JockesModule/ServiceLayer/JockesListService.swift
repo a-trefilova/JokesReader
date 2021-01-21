@@ -6,10 +6,6 @@ class JockesListService {
  
     func getJockes(jokesCount: Int, complition: @escaping ([Joke]?, ErrorType?) -> Void) {
         
-        guard jokesCount > 0  else {
-            complition([], ErrorType.zeroResults)
-            return
-        }
         var arrayOfJockes = [Joke]()
         var numberOfIterations = jokesCount
         
@@ -41,6 +37,4 @@ class JockesListService {
 
 enum ErrorType: Error {
     case noConnection
-    case requestLimit
-    case zeroResults
 }
