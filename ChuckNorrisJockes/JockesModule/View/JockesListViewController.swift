@@ -26,6 +26,11 @@ class JockesListViewController: UIViewController {
                                             for: .touchUpInside)
         
         navigationController?.navigationBar.topItem?.title = "Jokes"
+        if #available(iOS 12.0, *) {
+            if traitCollection.userInterfaceStyle == .dark {
+                navigationController?.navigationBar.tintColor = .white
+            }
+        }
     }
 
     private func hideKeyboardByTap() {

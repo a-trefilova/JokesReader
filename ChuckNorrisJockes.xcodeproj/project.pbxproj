@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0A0775A13FCE69742CF333E /* Pods_ChuckNorrisJockes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; };
 		D631444525B87C150081AA28 /* JokesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D631444425B87C150081AA28 /* JokesListDataSource.swift */; };
 		D631444F25B8C49B0081AA28 /* JokesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D631444E25B8C49B0081AA28 /* JokesListCell.swift */; };
 		D67A953425B9897D00DECB55 /* SymbolCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A953325B9897D00DECB55 /* SymbolCoder.swift */; };
@@ -16,6 +15,8 @@
 		D67A953E25B9949800DECB55 /* APIWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A953D25B9949800DECB55 /* APIWebViewModel.swift */; };
 		D67A954325B9A55E00DECB55 /* APIWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A954225B9A55E00DECB55 /* APIWebViewDelegate.swift */; };
 		D67A954A25B9B6B200DECB55 /* JokesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */; };
+		D67A955225B9ED5400DECB55 /* Pods_ChuckNorrisJockes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; };
+		D67A955325B9ED5400DECB55 /* Pods_ChuckNorrisJockes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404425B8277D00EDFAE2 /* AppDelegate.swift */; };
 		D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */; };
 		D69D404925B8277D00EDFAE2 /* JockesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */; };
@@ -28,6 +29,20 @@
 		D69D406F25B82F1C00EDFAE2 /* JockesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */; };
 		D69D407225B831D700EDFAE2 /* JockesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D67A955425B9ED5400DECB55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D67A955325B9ED5400DECB55 /* Pods_ChuckNorrisJockes.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorrisJockes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0A0775A13FCE69742CF333E /* Pods_ChuckNorrisJockes.framework in Frameworks */,
+				D67A955225B9ED5400DECB55 /* Pods_ChuckNorrisJockes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +229,7 @@
 				D69D403E25B8277D00EDFAE2 /* Frameworks */,
 				D69D403F25B8277D00EDFAE2 /* Resources */,
 				D1BC5CC6AF267AEF5C4D045C /* [CP] Embed Pods Frameworks */,
+				D67A955425B9ED5400DECB55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -474,6 +490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZK8KG7ZJ3;
 				INFOPLIST_FILE = ChuckNorrisJockes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZK8KG7ZJ3;
 				INFOPLIST_FILE = ChuckNorrisJockes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

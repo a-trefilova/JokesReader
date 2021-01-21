@@ -1,12 +1,11 @@
 
 import UIKit
 
-protocol JockesListBuilderProtocol: class {
+protocol BuilderProtocol: class {
     func build() -> UIViewController
 }
 
-class JockesListBuilder: JockesListBuilderProtocol {
-    
+class JockesListBuilder: BuilderProtocol {
     
     func build() -> UIViewController {
         let view = JockesListViewController()
@@ -15,6 +14,5 @@ class JockesListBuilder: JockesListBuilderProtocol {
         
         return view
     }
-    
     
 }

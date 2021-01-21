@@ -16,10 +16,11 @@ class APIWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = "API"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        if #available(iOS 12.0, *) {
+            if traitCollection.userInterfaceStyle == .dark {
+                navigationController?.navigationBar.tintColor = .white
+            }
+        }
         presenter.presentAPI()
     }
     

@@ -1,7 +1,7 @@
 
 import UIKit
 
-class APIWebViewBuilder {
+class APIWebViewBuilder: BuilderProtocol {
     
     func build() -> UIViewController {
         let model = APIWebViewModel()

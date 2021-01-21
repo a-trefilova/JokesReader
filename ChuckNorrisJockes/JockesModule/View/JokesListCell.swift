@@ -12,7 +12,7 @@ class JokesListCell: UITableViewCell {
         backgroundColor = .clear
         
         let myContentView = UIView()
-        myContentView.backgroundColor = .white
+        myContentView.backgroundColor = .clear
         myContentView.layer.cornerRadius = 8
         contentView.addSubview(myContentView)
         
@@ -25,6 +25,11 @@ class JokesListCell: UITableViewCell {
         
         let mainTextLabel = UILabel()
         mainTextLabel.textColor = .black
+        if #available(iOS 12.0, *) {
+            if traitCollection.userInterfaceStyle == .dark {
+                mainTextLabel.textColor = .white
+            }
+        } 
         mainTextLabel.font =  UIFont.systemFont(ofSize: 20)
         mainTextLabel.textAlignment = .left
         mainTextLabel.lineBreakMode = .byWordWrapping

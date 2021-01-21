@@ -129,13 +129,18 @@ class JockesListView: UIView {
         jokesCountTextField.layer.shadowOpacity = 0.6
         jokesCountTextField.layer.shadowRadius = 8.0
         jokesCountTextField.layer.shadowColor = UIColor.gray.cgColor
-        jokesCountTextField.backgroundColor = UIColor.secondarySystemGroupedBackground
+        jokesCountTextField.backgroundColor = UIColor.white
         jokesCountTextField.borderStyle = .none
         jokesCountTextField.layer.shadowOffset = CGSize.zero
         
         loadJokesButton.layer.cornerRadius = 8
         loadJokesButton.layer.borderWidth = 0.5
         loadJokesButton.layer.borderColor = #colorLiteral(red: 0.636843056, green: 0.426039911, blue: 0.8565875968, alpha: 1).cgColor
+        
+        if #available(iOS 12.0, *) {
+            if traitCollection.userInterfaceStyle == .dark {                jokesCountTextField.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            }
+        }
     }
     
 }
