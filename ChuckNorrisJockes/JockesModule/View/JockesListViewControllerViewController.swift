@@ -34,8 +34,8 @@ class JockesListViewController: UIViewController, ViewControllerDelegate {
         view.addGestureRecognizer(tap)
         //presenter.getJockes(jokesCount: 3)
         rootView?.loadJokesButton.addTarget(self, action: #selector(loadJokesButtonTapped), for: .touchUpInside)
-    
         rootView?.jokesCountTextField.delegate = self
+        navigationController?.navigationBar.topItem?.title = "Jokes"
     }
 
     @objc func loadJokesButtonTapped() {
@@ -45,8 +45,9 @@ class JockesListViewController: UIViewController, ViewControllerDelegate {
            // UIAlertController
             return
         }
-        
-        presenter.getJockes(jokesCount: value)
+        if 574 >= value {
+            presenter.getJockes(jokesCount: value)
+        }
     }
 
     //MARK: View Controller Delegate
@@ -109,6 +110,14 @@ extension JockesListViewController: UITextFieldDelegate {
             return false
         }
         textFieldValue = Int(text)
+        
+        guard let textFieldValue = textFieldValue else { return false}
+        if textFieldValue > 574 {
+            let alertController = UIAlertController(title: "Request Limit", message: "You've exceeded number of available jockes. Please, enter lower number of jokes", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Understood", style: .destructive, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+        }
         return true 
     }
     

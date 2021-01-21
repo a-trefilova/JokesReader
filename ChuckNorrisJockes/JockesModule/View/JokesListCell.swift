@@ -18,32 +18,34 @@ class JokesListCell: UITableViewCell {
         contentView.addSubview(myContentView)
         
         myContentView.snp.makeConstraints { (make) in
-            make.top.equalTo(contentView.snp.top).offset(15)
+            make.top.equalTo(contentView.snp.top)
             make.leading.equalTo(contentView.snp.leading)
             make.trailing.equalTo(contentView.snp.trailing)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-15)
+            make.bottom.equalTo(contentView.snp.bottom)
         }
         
         let mainTextLabel = UILabel()
         mainTextLabel.textColor = .black
-        mainTextLabel.font =  UIFont.systemFont(ofSize: 14)
+        mainTextLabel.font =  UIFont.systemFont(ofSize: 20)
         mainTextLabel.textAlignment = .left
         mainTextLabel.lineBreakMode = .byWordWrapping
         mainTextLabel.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 50
         mainTextLabel.numberOfLines = 0 
         mainTextLabel.text = data
+        mainTextLabel.adjustsFontSizeToFitWidth = true 
         
         myContentView.addSubview(mainTextLabel)
         mainTextLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(14)
-            make.height.greaterThanOrEqualTo(200)
-            make.leading.equalToSuperview().offset(14)
+            make.top.equalTo(myContentView.snp.top).offset(14)
+            make.leading.equalTo(myContentView.snp.leading).offset(20)
+            make.trailing.equalTo(myContentView.snp.trailing)
+            make.bottom.equalTo(myContentView.snp.bottom).offset(-14)
         }
         
         contentView.snp.makeConstraints { (make) in
             make.height.equalTo(myContentView.snp.height)
         }
-        contentView.contentHuggingPriority(for: NSLayoutConstraint.Axis.vertical)
+       // contentView.contentHuggingPriority(for: NSLayoutConstraint.Axis.vertical)
         
     }
 }

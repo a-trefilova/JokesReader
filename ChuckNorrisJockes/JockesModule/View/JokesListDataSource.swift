@@ -33,13 +33,7 @@ class JokesListDelegate: NSObject, UITableViewDelegate {
         self.listOfJokes = jokes
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        //heightForRow
-//        100
-//    }
-    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        100
+        return 30
     }
 }

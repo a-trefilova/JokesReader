@@ -10,23 +10,6 @@ class JockesListService {
             complition([], ErrorType.zeroResults)
             return
         }
-//        let jokesNumber = getCountOfAllJockes()
-//        
-//        if jokesCount > jokesNumber {
-//            complition([], ErrorType.requestLimit)
-//        }
-        
-//        getCountOfAllJockes() { number in
-//            if number == 0 {
-//                complition([], ErrorType.noConnection)
-//            }
-//            
-//            if number < jokesCount {
-//                complition([], ErrorType.requestLimit)
-//            }
-//        }
-        
-        
         var arrayOfJockes = [Joke]()
         var numberOfIterations = jokesCount
         
@@ -38,8 +21,11 @@ class JockesListService {
                     return
                     }
                 let joke = response.value
+                
                 if !arrayOfJockes.contains(where: {$0.id == joke.id}) {
-                    arrayOfJockes.append(response.value)
+                    let decodedJoke = SymbolCoder().decodeString(input: joke.joke)
+                    let newJoke = Joke(id: joke.id, joke: decodedJoke)
+                    arrayOfJockes.append(newJoke)
                     complition(arrayOfJockes, nil)
                 } else {
                     numberOfIterations += 1
@@ -49,21 +35,7 @@ class JockesListService {
         
     }
     
-    private func getCountOfAllJockes() -> Int? {
-        var value = 0
-        AF.request("https://api.icndb.com/jokes/count").responseDecodable(of: CountResponse.self) { response in
-            guard let response = response.value else { return }
-            guard response.value > 0 else { return }
-            DispatchQueue.main.async {
-                value = response.value
-            }
-        }
-        if value > 0 {
-            return value
-        } else {
-            return nil
-        }
-    }
+    
 }
 
 

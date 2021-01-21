@@ -13,8 +13,10 @@ class JockesListView: UIView {
     
     var jokesListTableView: UITableView = {
         let tableView = UITableView()
-        tableView.separatorStyle = .none
+        //tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 30
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
@@ -30,18 +32,14 @@ class JockesListView: UIView {
     
     var loadJokesButton: UIButton = {
         let button = UIButton()
-        //button.setTitle("LOAD", for: .normal)
         button.setAttributedTitle(NSAttributedString(string: "LOAD", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.kern: -0.41]), for: .normal)
-        //button.setTitleColor(.white, for: .normal)
-        
         button.tintColor = .blue
-        button.backgroundColor = .blue
+        button.backgroundColor = #colorLiteral(red: 0.5949049436, green: 0.652549599, blue: 1, alpha: 1)
         return button
     }()
     
     var buttonBottomConstraintValue: CGFloat = -80
-   // var topTFConstraintValue: CGFloat = 350
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,11 +47,15 @@ class JockesListView: UIView {
         addSubviews()
         makeConstraints()
         subscribeToShowKeyboardNotifications()
-    
+        //designTextFieldAndButton ()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        designTextFieldAndButton()
     }
     
     func subscribeToShowKeyboardNotifications() {
@@ -68,12 +70,6 @@ class JockesListView: UIView {
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         let keyboardHeight = keyboardSize.cgRectValue.height
         buttonBottomConstraintValue = -80 - keyboardHeight
-        //    topTFConstraintValue = 350 - keyboardHeight
-        
-//        jokesCountTextField.snp.updateConstraints { (make) in
-//            make.top.equalTo(customView.snp.top).offset(topTFConstraintValue)
-//        }
-        
         loadJokesButton.snp.updateConstraints { (make) in
             make.bottom.equalTo(customView.snp.bottom).offset(buttonBottomConstraintValue)
         }
@@ -83,11 +79,6 @@ class JockesListView: UIView {
 
     @objc func keyboardWillHide(_ notification: Notification) {
         buttonBottomConstraintValue = -80
-//            topTFConstraintValue = 350
-//        jokesCountTextField.snp.updateConstraints { (make) in
-//            make.top.equalTo(customView.snp.top).offset(topTFConstraintValue)
-//        }
-        
         loadJokesButton.snp.updateConstraints { (make) in
             make.bottom.equalTo(customView.snp.bottom).offset(buttonBottomConstraintValue)
         }
@@ -105,10 +96,6 @@ class JockesListView: UIView {
     
     private func makeConstraints() {
         customView.snp.makeConstraints { (make) in
-//            make.top.equalToSuperview()
-//            make.leading.equalToSuperview()
-//            make.trailing.equalToSuperview()
-//            make.bottom.equalToSuperview()
             make.edges.equalToSuperview()
         }
         
@@ -120,11 +107,9 @@ class JockesListView: UIView {
         }
         
         jokesCountTextField.snp.makeConstraints { (make) in
-           // make.top.equalTo(customView.snp.top).offset(topTFConstraintValue)
             make.centerX.equalTo(jokesListTableView.snp.centerX)
             make.height.equalTo(40)
-            make.width.equalTo(UIScreen.main.bounds.width / 4)
-           // make.bottom.greaterThanOrEqualTo(loadJokesButton.snp.top).offset(-20)
+            make.width.equalTo(UIScreen.main.bounds.width / 3)
         }
         
         loadJokesButton.snp.makeConstraints { (make) in
@@ -136,6 +121,22 @@ class JockesListView: UIView {
         }
         
         
+    }
+    
+    private func designTextFieldAndButton() {
+        jokesCountTextField.layer.cornerRadius = 8
+        jokesCountTextField.layer.borderWidth = 0.25
+        jokesCountTextField.layer.borderColor = UIColor(white: 0.5, alpha: 0.3).cgColor
+        jokesCountTextField.layer.shadowOpacity = 0.6
+        jokesCountTextField.layer.shadowRadius = 8.0
+        jokesCountTextField.layer.shadowColor = UIColor.gray.cgColor
+        jokesCountTextField.backgroundColor = UIColor.secondarySystemGroupedBackground
+        jokesCountTextField.borderStyle = .none
+        jokesCountTextField.layer.shadowOffset = CGSize.zero
+        
+        loadJokesButton.layer.cornerRadius = 8
+        loadJokesButton.layer.borderWidth = 0.5
+        loadJokesButton.layer.borderColor = #colorLiteral(red: 0.636843056, green: 0.426039911, blue: 0.8565875968, alpha: 1).cgColor
     }
     
 }
