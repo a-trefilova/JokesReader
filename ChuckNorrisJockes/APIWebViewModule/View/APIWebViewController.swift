@@ -1,6 +1,7 @@
 
 import UIKit
 import WebKit
+import SnapKit
 
 class APIWebViewController: UIViewController {
     
@@ -8,6 +9,12 @@ class APIWebViewController: UIViewController {
     private var webView: WKWebView!
     private var webViewDelegate: WkNavDelegate?
     
+    private var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true 
+        return indicator
+    }()
+
     override func loadView() {
         webView = WKWebView()
         view = webView
@@ -15,6 +22,7 @@ class APIWebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        layoutActivityIndicator()
         navigationController?.navigationBar.topItem?.title = "API"
         if #available(iOS 12.0, *) {
             if traitCollection.userInterfaceStyle == .dark {
@@ -24,13 +32,26 @@ class APIWebViewController: UIViewController {
         presenter.presentAPI()
     }
     
+    private func layoutActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.height.equalTo(40)
+            make.width.equalTo(40)
+        }
+        view.bringSubviewToFront(activityIndicator)
+    }
+    
     private func loadWebView(with url: URL) {
         
         webView.allowsBackForwardNavigationGestures = true
         if !webView.hasOnlySecureContent {
             let alertController = UIAlertController(title: "Unsecure content", message: "We don't trust this site, because it is uncertified. However, you can open it despite its unsafety.", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Open anyway", style: .destructive) { _ in
+                self.activityIndicator.startAnimating()
                 self.webView.load(URLRequest(url: url))
+                self.activityIndicator.stopAnimating()
             }
             let secondAlertAction = UIAlertAction(title: "Don't open this site", style: .cancel, handler: nil)
             alertController.addAction(secondAlertAction)
@@ -47,7 +68,7 @@ class APIWebViewController: UIViewController {
 extension APIWebViewController: APIWebViewViewProtocol {
     func setUrlForWebView(url: URL) {
         loadWebView(with: url)
-        webViewDelegate = WkNavDelegate(url: url, viewController: self)
+        webViewDelegate = WkNavDelegate(url: url, viewController: self, acitivityIndicator: activityIndicator)
         webView.navigationDelegate = webViewDelegate
     }
     

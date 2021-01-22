@@ -3,8 +3,15 @@ import UIKit
 import SnapKit
 
 class JokesListCell: UITableViewCell {
-    
+    private var mainTextLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
     static let reuseId = "JokesListCell"
+    
+    override func prepareForReuse() {
+        mainTextLabel.text = ""
+    }
     
     func fillCellWithData(data: String) {
         
@@ -23,7 +30,7 @@ class JokesListCell: UITableViewCell {
             make.bottom.equalTo(contentView.snp.bottom)
         }
         
-        let mainTextLabel = UILabel()
+        //let mainTextLabel = UILabel()
         mainTextLabel.textColor = .black
         if #available(iOS 12.0, *) {
             if traitCollection.userInterfaceStyle == .dark {

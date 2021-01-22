@@ -11,6 +11,12 @@ class JockesListView: UIView {
         return view
     }()
     
+    var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
+    
     var jokesListTableView: UITableView = {
         let tableView = UITableView()
         //tableView.separatorStyle = .none
@@ -89,6 +95,7 @@ class JockesListView: UIView {
         addSubview(customView)
         customView.addSubview(jokesListTableView)
         customView.sendSubviewToBack(jokesListTableView)
+        jokesListTableView.addSubview(activityIndicator)
         jokesListTableView.addSubview(jokesCountTextField)
         jokesListTableView.addSubview(loadJokesButton)
     }
@@ -103,6 +110,13 @@ class JockesListView: UIView {
             make.leading.equalTo(customView.snp.leading)
             make.trailing.equalTo(customView.snp.trailing)
             make.bottom.equalTo(customView.snp.bottom)
+        }
+        
+        activityIndicator.snp.makeConstraints { (make) in
+            make.centerX.equalTo(customView.snp.centerX)
+            make.centerY.equalTo(customView.snp.centerY)
+            make.height.equalTo(40)
+            make.width.equalTo(40)
         }
         
         jokesCountTextField.snp.makeConstraints { (make) in

@@ -2,6 +2,8 @@
 import Foundation
 
 protocol JockesListViewProtocol {
+    func startLoading()
+    func endLoading() 
     func setListOfJockes(listOfJockes: [Joke])
     func reloadView()
     func handleErrors(ofType: ErrorType)
@@ -26,6 +28,7 @@ class JockesListPresenter: JockesListPresenterProtocol {
     }
 
     func getJockes(jokesCount count: Int)  {
+        jockesView.startLoading()
         jockesListService.getJockes(jokesCount: count) { jokes, error in
             if let error = error {
                 self.jockesView.handleErrors(ofType: error)
@@ -34,6 +37,7 @@ class JockesListPresenter: JockesListPresenterProtocol {
             DispatchQueue.main.async {
                 self.jockesView.setListOfJockes(listOfJockes: jokes)
                 self.jockesView.reloadView()
+                self.jockesView.endLoading()
             }
         }
        

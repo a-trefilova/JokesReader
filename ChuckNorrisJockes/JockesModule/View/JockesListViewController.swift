@@ -1,7 +1,11 @@
 
 import UIKit
 
-class JockesListViewController: UIViewController {
+protocol ViewControllerDelegate: class  {
+    
+}
+
+class JockesListViewController: UIViewController, ViewControllerDelegate {
    
     var presenter: JockesListPresenterProtocol!
     
@@ -51,6 +55,16 @@ class JockesListViewController: UIViewController {
 }
 
 extension JockesListViewController: JockesListViewProtocol {
+    func startLoading() {
+        rootViewDatasource = JokesListDatasource(jokes: [])
+        rootView?.jokesListTableView.dataSource = rootViewDatasource
+        rootView?.activityIndicator.startAnimating()
+    }
+    
+    func endLoading() {
+        rootView?.activityIndicator.stopAnimating()
+    }
+    
     func handleErrors(ofType: ErrorType) {
         var alertController: UIAlertController
         switch ofType {
@@ -64,7 +78,7 @@ extension JockesListViewController: JockesListViewProtocol {
     
     func setListOfJockes(listOfJockes: [Joke]) {
         rootViewDatasource = JokesListDatasource(jokes: listOfJockes)
-        rootViewDelegate = JokesListDelegate(jokes: listOfJockes)
+        rootViewDelegate = JokesListDelegate(jokes: listOfJockes, delegate: self)
         rootView?.jokesListTableView.dataSource = rootViewDatasource
         rootView?.jokesListTableView.delegate = rootViewDelegate
         rootView?.jokesListTableView.register(JokesListCell.self, forCellReuseIdentifier: JokesListCell.reuseId)
