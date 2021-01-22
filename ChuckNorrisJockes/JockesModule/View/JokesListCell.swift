@@ -30,7 +30,6 @@ class JokesListCell: UITableViewCell {
             make.bottom.equalTo(contentView.snp.bottom)
         }
         
-        //let mainTextLabel = UILabel()
         mainTextLabel.textColor = .black
         if #available(iOS 12.0, *) {
             if traitCollection.userInterfaceStyle == .dark {

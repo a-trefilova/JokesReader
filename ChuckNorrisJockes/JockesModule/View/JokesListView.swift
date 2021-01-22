@@ -2,7 +2,7 @@
 import UIKit
 import SnapKit
 
-class JockesListView: UIView {
+class JokesListView: UIView {
     
     private let customView: UIView = {
         let view = UIView()

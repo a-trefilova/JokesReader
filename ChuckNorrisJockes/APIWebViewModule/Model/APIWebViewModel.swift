@@ -7,5 +7,4 @@ class APIWebViewModel {
 
 enum APIErrorType: Error {
     case noConection
-    case unreliableSite
 }

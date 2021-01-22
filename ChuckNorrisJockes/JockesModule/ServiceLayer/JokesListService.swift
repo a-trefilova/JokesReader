@@ -2,9 +2,9 @@
 import Foundation
 import Alamofire
 
-class JockesListService {
+class JokesListService {
  
-    func getJockes(jokesCount: Int, complition: @escaping ([Joke]?, ErrorType?) -> Void) {
+    func getJokes(jokesCount: Int, complition: @escaping ([Joke]?, ErrorType?) -> Void) {
         
         var arrayOfJockes = [Joke]()
         var numberOfIterations = jokesCount
@@ -13,8 +13,8 @@ class JockesListService {
             AF.request("https://api.icndb.com/jokes/random").responseDecodable(of: Response.self) { response in
                 guard let response = response.value
                     else {
-                    complition(nil, ErrorType.noConnection)
-                    return
+                        complition(nil, ErrorType.noConnection)
+                        return
                     }
                 let joke = response.value
                 
@@ -28,10 +28,7 @@ class JockesListService {
                 }
             }
         }
-        
     }
-    
-    
 }
 
 

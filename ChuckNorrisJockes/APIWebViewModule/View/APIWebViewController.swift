@@ -48,14 +48,14 @@ class APIWebViewController: UIViewController {
         webView.allowsBackForwardNavigationGestures = true
         if !webView.hasOnlySecureContent {
             let alertController = UIAlertController(title: "Unsecure content", message: "We don't trust this site, because it is uncertified. However, you can open it despite its unsafety.", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Open anyway", style: .destructive) { _ in
-                self.activityIndicator.startAnimating()
-                self.webView.load(URLRequest(url: url))
-                self.activityIndicator.stopAnimating()
+            let firstAction = UIAlertAction(title: "Open anyway", style: .destructive) {[weak self] _ in
+                self?.activityIndicator.startAnimating()
+                self?.webView.load(URLRequest(url: url))
+                self?.activityIndicator.stopAnimating()
             }
-            let secondAlertAction = UIAlertAction(title: "Don't open this site", style: .cancel, handler: nil)
-            alertController.addAction(secondAlertAction)
-            alertController.addAction(alertAction)
+            let secondAction = UIAlertAction(title: "Don't open this site", style: .cancel, handler: nil)
+            alertController.addAction(secondAction)
+            alertController.addAction(firstAction)
             present(alertController, animated: true, completion: nil)
         } else {
             webView.load(URLRequest(url: url))
@@ -74,18 +74,15 @@ extension APIWebViewController: APIWebViewViewProtocol {
     
     func handleErrors(ofType: APIErrorType) {
         switch ofType {
-        
         case .noConection:
-            let alertController = UIAlertController(title: "No Internet Connection", message: "Please, check your Wi-Fi or wait", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Ok, I'll wait", style: .destructive, handler: nil)
-            alertController.addAction(alertAction)
+            let alertController = AlertBuilder(title: "No Internet Connection",
+                                               message: "Please, check your Wi-Fi or wait",
+                                               titleActions: ["Ok, I'll wait"])
+                .getAlertController()
             present(alertController, animated: true, completion: nil)
-            
-        case .unreliableSite:
-            break
         }
-        
     }
-    
-    
 }
+
+
+

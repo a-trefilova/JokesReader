@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let firstVc = JockesListBuilder().build()
+        let firstVc = JokesListBuilder().build()
         let secondVc = APIWebViewBuilder().build()
         
         let firstNavController = UINavigationController(rootViewController:firstVc)

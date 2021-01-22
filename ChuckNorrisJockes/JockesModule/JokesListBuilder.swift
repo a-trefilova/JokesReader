@@ -5,11 +5,11 @@ protocol BuilderProtocol: class {
     func build() -> UIViewController
 }
 
-class JockesListBuilder: BuilderProtocol {
+class JokesListBuilder: BuilderProtocol {
     
     func build() -> UIViewController {
-        let view = JockesListViewController()
-        let presenter = JockesListPresenter(service: JockesListService(), view: view)
+        let view = JokesListViewController()
+        let presenter = JokesListPresenter(service: JokesListService(), view: view)
         view.presenter = presenter
         
         return view

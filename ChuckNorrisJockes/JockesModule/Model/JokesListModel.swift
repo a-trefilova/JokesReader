@@ -12,7 +12,3 @@ struct Joke: Codable {
     let joke: String
 }
 
-struct CountResponse: Codable {
-    let type: String
-    let value: Int
-}

@@ -17,17 +17,18 @@
 		D67A954A25B9B6B200DECB55 /* JokesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */; };
 		D67A955225B9ED5400DECB55 /* Pods_ChuckNorrisJockes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; };
 		D67A955325B9ED5400DECB55 /* Pods_ChuckNorrisJockes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19616364DDCCA81A8671235A /* Pods_ChuckNorrisJockes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D67A955625BACCCE00DECB55 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A955525BACCCE00DECB55 /* AlertBuilder.swift */; };
 		D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404425B8277D00EDFAE2 /* AppDelegate.swift */; };
 		D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */; };
-		D69D404925B8277D00EDFAE2 /* JockesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */; };
+		D69D404925B8277D00EDFAE2 /* JokesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D404825B8277D00EDFAE2 /* JokesListViewController.swift */; };
 		D69D404E25B8278200EDFAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D69D404D25B8278200EDFAE2 /* Assets.xcassets */; };
 		D69D405125B8278200EDFAE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */; };
 		D69D405F25B8296C00EDFAE2 /* APIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D405E25B8296C00EDFAE2 /* APIWebViewController.swift */; };
-		D69D406425B82D2700EDFAE2 /* JockesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */; };
-		D69D406825B82D4900EDFAE2 /* JockesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406725B82D4900EDFAE2 /* JockesListView.swift */; };
-		D69D406B25B82D5F00EDFAE2 /* JockesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */; };
-		D69D406F25B82F1C00EDFAE2 /* JockesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */; };
-		D69D407225B831D700EDFAE2 /* JockesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */; };
+		D69D406425B82D2700EDFAE2 /* JokesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406325B82D2700EDFAE2 /* JokesListPresenter.swift */; };
+		D69D406825B82D4900EDFAE2 /* JokesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406725B82D4900EDFAE2 /* JokesListView.swift */; };
+		D69D406B25B82D5F00EDFAE2 /* JokesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406A25B82D5F00EDFAE2 /* JokesListModel.swift */; };
+		D69D406F25B82F1C00EDFAE2 /* JokesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D406E25B82F1C00EDFAE2 /* JokesListService.swift */; };
+		D69D407225B831D700EDFAE2 /* JokesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D407125B831D700EDFAE2 /* JokesListBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,19 +57,20 @@
 		D67A953D25B9949800DECB55 /* APIWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWebViewModel.swift; sourceTree = "<group>"; };
 		D67A954225B9A55E00DECB55 /* APIWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWebViewDelegate.swift; sourceTree = "<group>"; };
 		D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListDelegate.swift; sourceTree = "<group>"; };
+		D67A955525BACCCE00DECB55 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		D69D404125B8277D00EDFAE2 /* ChuckNorrisJockes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorrisJockes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69D404425B8277D00EDFAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListViewController.swift; sourceTree = "<group>"; };
+		D69D404825B8277D00EDFAE2 /* JokesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListViewController.swift; sourceTree = "<group>"; };
 		D69D404D25B8278200EDFAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D69D405025B8278200EDFAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D69D405225B8278200EDFAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D69D405E25B8296C00EDFAE2 /* APIWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWebViewController.swift; sourceTree = "<group>"; };
-		D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListPresenter.swift; sourceTree = "<group>"; };
-		D69D406725B82D4900EDFAE2 /* JockesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListView.swift; sourceTree = "<group>"; };
-		D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListModel.swift; sourceTree = "<group>"; };
-		D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListService.swift; sourceTree = "<group>"; };
-		D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JockesListBuilder.swift; sourceTree = "<group>"; };
+		D69D406325B82D2700EDFAE2 /* JokesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListPresenter.swift; sourceTree = "<group>"; };
+		D69D406725B82D4900EDFAE2 /* JokesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListView.swift; sourceTree = "<group>"; };
+		D69D406A25B82D5F00EDFAE2 /* JokesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListModel.swift; sourceTree = "<group>"; };
+		D69D406E25B82F1C00EDFAE2 /* JokesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListService.swift; sourceTree = "<group>"; };
+		D69D407125B831D700EDFAE2 /* JokesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesListBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 		D631444925B8C4040081AA28 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D69D406A25B82D5F00EDFAE2 /* JockesListModel.swift */,
+				D69D406A25B82D5F00EDFAE2 /* JokesListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,8 +115,8 @@
 			children = (
 				D631444425B87C150081AA28 /* JokesListDataSource.swift */,
 				D67A954925B9B6B200DECB55 /* JokesListDelegate.swift */,
-				D69D404825B8277D00EDFAE2 /* JockesListViewController.swift */,
-				D69D406725B82D4900EDFAE2 /* JockesListView.swift */,
+				D69D404825B8277D00EDFAE2 /* JokesListViewController.swift */,
+				D69D406725B82D4900EDFAE2 /* JokesListView.swift */,
 				D631444E25B8C49B0081AA28 /* JokesListCell.swift */,
 			);
 			path = View;
@@ -123,7 +125,7 @@
 		D631444B25B8C4120081AA28 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				D69D406325B82D2700EDFAE2 /* JockesListPresenter.swift */,
+				D69D406325B82D2700EDFAE2 /* JokesListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -131,7 +133,7 @@
 		D631444C25B8C42A0081AA28 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				D69D406E25B82F1C00EDFAE2 /* JockesListService.swift */,
+				D69D406E25B82F1C00EDFAE2 /* JokesListService.swift */,
 				D67A953325B9897D00DECB55 /* SymbolCoder.swift */,
 			);
 			path = ServiceLayer;
@@ -150,6 +152,7 @@
 			children = (
 				D67A954225B9A55E00DECB55 /* APIWebViewDelegate.swift */,
 				D69D405E25B8296C00EDFAE2 /* APIWebViewController.swift */,
+				D67A955525BACCCE00DECB55 /* AlertBuilder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +163,18 @@
 				D67A953A25B9947F00DECB55 /* APIWebViewPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D67A955725BAD16600DECB55 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D69D404425B8277D00EDFAE2 /* AppDelegate.swift */,
+				D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */,
+				D69D404D25B8278200EDFAE2 /* Assets.xcassets */,
+				D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */,
+				D69D405225B8278200EDFAE2 /* Info.plist */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		D69D403825B8277D00EDFAE2 = {
@@ -183,13 +198,9 @@
 		D69D404325B8277D00EDFAE2 /* ChuckNorrisJockes */ = {
 			isa = PBXGroup;
 			children = (
+				D67A955725BAD16600DECB55 /* Sources */,
 				D69D406225B82CDC00EDFAE2 /* APIWebViewModule */,
 				D69D406125B82CCB00EDFAE2 /* JockesModule */,
-				D69D404425B8277D00EDFAE2 /* AppDelegate.swift */,
-				D69D404625B8277D00EDFAE2 /* SceneDelegate.swift */,
-				D69D404D25B8278200EDFAE2 /* Assets.xcassets */,
-				D69D404F25B8278200EDFAE2 /* LaunchScreen.storyboard */,
-				D69D405225B8278200EDFAE2 /* Info.plist */,
 			);
 			path = ChuckNorrisJockes;
 			sourceTree = "<group>";
@@ -197,7 +208,7 @@
 		D69D406125B82CCB00EDFAE2 /* JockesModule */ = {
 			isa = PBXGroup;
 			children = (
-				D69D407125B831D700EDFAE2 /* JockesListBuilder.swift */,
+				D69D407125B831D700EDFAE2 /* JokesListBuilder.swift */,
 				D631444C25B8C42A0081AA28 /* ServiceLayer */,
 				D631444B25B8C4120081AA28 /* Presenter */,
 				D631444A25B8C40D0081AA28 /* View */,
@@ -331,20 +342,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67A955625BACCCE00DECB55 /* AlertBuilder.swift in Sources */,
 				D67A953E25B9949800DECB55 /* APIWebViewModel.swift in Sources */,
 				D67A954325B9A55E00DECB55 /* APIWebViewDelegate.swift in Sources */,
 				D67A954A25B9B6B200DECB55 /* JokesListDelegate.swift in Sources */,
 				D69D405F25B8296C00EDFAE2 /* APIWebViewController.swift in Sources */,
-				D69D404925B8277D00EDFAE2 /* JockesListViewController.swift in Sources */,
-				D69D406425B82D2700EDFAE2 /* JockesListPresenter.swift in Sources */,
+				D69D404925B8277D00EDFAE2 /* JokesListViewController.swift in Sources */,
+				D69D406425B82D2700EDFAE2 /* JokesListPresenter.swift in Sources */,
 				D69D404525B8277D00EDFAE2 /* AppDelegate.swift in Sources */,
-				D69D406B25B82D5F00EDFAE2 /* JockesListModel.swift in Sources */,
+				D69D406B25B82D5F00EDFAE2 /* JokesListModel.swift in Sources */,
 				D69D404725B8277D00EDFAE2 /* SceneDelegate.swift in Sources */,
 				D67A953425B9897D00DECB55 /* SymbolCoder.swift in Sources */,
-				D69D406F25B82F1C00EDFAE2 /* JockesListService.swift in Sources */,
+				D69D406F25B82F1C00EDFAE2 /* JokesListService.swift in Sources */,
 				D67A953825B9947400DECB55 /* APIWebViewBuilder.swift in Sources */,
-				D69D407225B831D700EDFAE2 /* JockesListBuilder.swift in Sources */,
-				D69D406825B82D4900EDFAE2 /* JockesListView.swift in Sources */,
+				D69D407225B831D700EDFAE2 /* JokesListBuilder.swift in Sources */,
+				D69D406825B82D4900EDFAE2 /* JokesListView.swift in Sources */,
 				D631444525B87C150081AA28 /* JokesListDataSource.swift in Sources */,
 				D631444F25B8C49B0081AA28 /* JokesListCell.swift in Sources */,
 				D67A953B25B9947F00DECB55 /* APIWebViewPresenter.swift in Sources */,
@@ -489,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZK8KG7ZJ3;
-				INFOPLIST_FILE = ChuckNorrisJockes/Info.plist;
+				INFOPLIST_FILE = ChuckNorrisJockes/Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -498,7 +510,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rockmountain.ChuckNorrisJockes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,7 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZK8KG7ZJ3;
-				INFOPLIST_FILE = ChuckNorrisJockes/Info.plist;
+				INFOPLIST_FILE = ChuckNorrisJockes/Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,7 +531,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rockmountain.ChuckNorrisJockes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

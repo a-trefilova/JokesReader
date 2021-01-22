@@ -7,10 +7,8 @@ protocol APIWebViewViewProtocol {
 }
 
 protocol APIWebViewPresenterProtocol {
-    
     init(model: APIWebViewModel, view: APIWebViewViewProtocol)
     func presentAPI()
-    
 }
 
 class APIWebViewPresenter: APIWebViewPresenterProtocol {

@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if #available(iOS 13, *) {
         } else {
-            let firstVc = JockesListBuilder().build()
+            let firstVc = JokesListBuilder().build()
             let secondVc = APIWebViewBuilder().build()
             
             let firstNavController = UINavigationController(rootViewController:firstVc)
